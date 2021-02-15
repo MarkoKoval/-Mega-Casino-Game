@@ -1,0 +1,116 @@
+0. Exit 1. Create User 2. Create Super Admin 3. Create Casino 4. Create Game Machine 5. Play 
+ 6. Add money to account 7. Add money to Game Machine 8. Withdraw money from Game Machine 9. Delete game machine 10. Info: 1
+Enter user name: John
+Enter user money: 30
+0. Exit 1. Create User 2. Create Super Admin 3. Create Casino 4. Create Game Machine 5. Play 
+ 6. Add money to account 7. Add money to Game Machine 8. Withdraw money from Game Machine 9. Delete game machine 10. Info: 2
+Enter Super Admin name: Jack
+Enter Super Admin money: 100
+0. Exit 1. Create User 2. Create Super Admin 3. Create Casino 4. Create Game Machine 5. Play 
+ 6. Add money to account 7. Add money to Game Machine 8. Withdraw money from Game Machine 9. Delete game machine 10. Info: 3
+gEnter Casino Name: Vegas
+0. Exit 1. Create User 2. Create Super Admin 3. Create Casino 4. Create Game Machine 5. Play 
+ 6. Add money to account 7. Add money to Game Machine 8. Withdraw money from Game Machine 9. Delete game machine 10. Info: 4
+Enter money count to initialize new machine: 30
+0. Exit 1. Create User 2. Create Super Admin 3. Create Casino 4. Create Game Machine 5. Play 
+ 6. Add money to account 7. Add money to Game Machine 8. Withdraw money from Game Machine 9. Delete game machine 10. Info: 4
+Enter money count to initialize new machine: 35
+0. Exit 1. Create User 2. Create Super Admin 3. Create Casino 4. Create Game Machine 5. Play 
+ 6. Add money to account 7. Add money to Game Machine 8. Withdraw money from Game Machine 9. Delete game machine 10. Info: 4
+Enter money count to initialize new machine: 35
+0. Exit 1. Create User 2. Create Super Admin 3. Create Casino 4. Create Game Machine 5. Play 
+ 6. Add money to account 7. Add money to Game Machine 8. Withdraw money from Game Machine 9. Delete game machine 10. Info: 5
+index 0 name John money 30.0
+Select user index number to play: 0
+Enter money count to play: 2
+available money 30.0 in game machine 0
+available money 35.0 in game machine 1
+available money 35.0 in game machine 2
+generated value is 546  (for possible 3x won 3 common digits, for 2x won 2 common digits or you lose)
+The balance of user John is 28.0 
+0. Exit 1. Create User 2. Create Super Admin 3. Create Casino 4. Create Game Machine 5. Play 
+ 6. Add money to account 7. Add money to Game Machine 8. Withdraw money from Game Machine 9. Delete game machine 10. Info: 5
+index 0 name John money 28.0
+Select user index number to play: 0
+Enter money count to play: 2
+available money 32.0 in game machine 0
+available money 35.0 in game machine 1
+available money 35.0 in game machine 2
+generated value is 742  (for possible 3x won 3 common digits, for 2x won 2 common digits or you lose)
+The balance of user John is 26.0 
+0. Exit 1. Create User 2. Create Super Admin 3. Create Casino 4. Create Game Machine 5. Play 
+ 6. Add money to account 7. Add money to Game Machine 8. Withdraw money from Game Machine 9. Delete game machine 10. Info: 5
+index 0 name John money 26.0
+Select user index number to play: 0
+Enter money count to play: 2
+available money 34.0 in game machine 0
+available money 35.0 in game machine 1
+available money 35.0 in game machine 2
+generated value is 487  (for possible 3x won 3 common digits, for 2x won 2 common digits or you lose)
+The balance of user John is 24.0 
+0. Exit 1. Create User 2. Create Super Admin 3. Create Casino 4. Create Game Machine 5. Play 
+ 6. Add money to account 7. Add money to Game Machine 8. Withdraw money from Game Machine 9. Delete game machine 10. Info: 5
+index 0 name John money 24.0
+Select user index number to play: 0
+Enter money count to play: 2
+available money 36.0 in game machine 0
+available money 35.0 in game machine 1
+available money 35.0 in game machine 2
+generated value is 161  (for possible 3x won 3 common digits, for 2x won 2 common digits or you lose)
+The balance of user John is 28.0 
+0. Exit 1. Create User 2. Create Super Admin 3. Create Casino 4. Create Game Machine 5. Play 
+ 6. Add money to account 7. Add money to Game Machine 8. Withdraw money from Game Machine 9. Delete game machine 10. Info: 6
+Add money to Admin type a or to one of simple users type u: u
+index 0 name John money 28.0
+Select user index number to add: 0
+How much money to add? :10
+The balance of user John is 38.0 
+0. Exit 1. Create User 2. Create Super Admin 3. Create Casino 4. Create Game Machine 5. Play 
+ 6. Add money to account 7. Add money to Game Machine 8. Withdraw money from Game Machine 9. Delete game machine 10. Info: 10
+user 0 John has 38.0 money
+super admin Jack has 0.0 money
+There is ' Vegas ' casino and 3 game machines available
+Machine with 0 index has 32.0 money 
+Machine with 1 index has 35.0 money 
+Machine with 2 index has 35.0 money 
+0. Exit 1. Create User 2. Create Super Admin 3. Create Casino 4. Create Game Machine 5. Play 
+ 6. Add money to account 7. Add money to Game Machine 8. Withdraw money from Game Machine 9. Delete game machine 10. Info: 9
+There is ' Vegas ' casino and game machines available
+Machine with 0 index has 32.0 money 
+Machine with 1 index has 35.0 money 
+Machine with 2 index has 35.0 money 
+Enter game machine index to delete: 0
+0. Exit 1. Create User 2. Create Super Admin 3. Create Casino 4. Create Game Machine 5. Play 
+ 6. Add money to account 7. Add money to Game Machine 8. Withdraw money from Game Machine 9. Delete game machine 10. Info: 10
+user 0 John has 38.0 money
+super admin Jack has 0.0 money
+There is ' Vegas ' casino and 2 game machines available
+Machine with 0 index has 51.0 money 
+Machine with 1 index has 51.0 money 
+0. Exit 1. Create User 2. Create Super Admin 3. Create Casino 4. Create Game Machine 5. Play 
+ 6. Add money to account 7. Add money to Game Machine 8. Withdraw money from Game Machine 9. Delete game machine 10. Info: 8
+Machine with 0 index has 51.0 money 
+Machine with 1 index has 51.0 money 
+Type how much to withdraw: 55
+0. Exit 1. Create User 2. Create Super Admin 3. Create Casino 4. Create Game Machine 5. Play 
+ 6. Add money to account 7. Add money to Game Machine 8. Withdraw money from Game Machine 9. Delete game machine 10. Info: 10
+user 0 John has 38.0 money
+super admin Jack has 0.0 money
+There is ' Vegas ' casino and 2 game machines available
+Machine with 0 index has 0 money 
+Machine with 1 index has 47.0 money 
+0. Exit 1. Create User 2. Create Super Admin 3. Create Casino 4. Create Game Machine 5. Play 
+ 6. Add money to account 7. Add money to Game Machine 8. Withdraw money from Game Machine 9. Delete game machine 10. Info: 7
+Machine with 0 index has 0 money 
+Machine with 1 index has 47.0 money 
+Type index of machine to add money: 0
+Type how much to add: 55
+0. Exit 1. Create User 2. Create Super Admin 3. Create Casino 4. Create Game Machine 5. Play 
+ 6. Add money to account 7. Add money to Game Machine 8. Withdraw money from Game Machine 9. Delete game machine 10. Info: 10
+user 0 John has 38.0 money
+super admin Jack has 0.0 money
+There is ' Vegas ' casino and 2 game machines available
+Machine with 0 index has 55.0 money 
+Machine with 1 index has 47.0 money 
+0. Exit 1. Create User 2. Create Super Admin 3. Create Casino 4. Create Game Machine 5. Play 
+ 6. Add money to account 7. Add money to Game Machine 8. Withdraw money from Game Machine 9. Delete game machine 10. Info:
