@@ -22,16 +22,22 @@ class User:
 
     def play(self, money):
         for index, machine in enumerate(Casino.game_machines):
-            print("available money {} in game machine {}".format(machine.money, index))
+            print("available money {} in game machine {}".
+                  format(machine.money, index))
         # find out if game machines with 3x possibility win exist
-        machines_with_enough_money = [machine for machine in Casino.game_machines if machine.money >= money * 3]
+        machines_with_enough_money = [machine for machine
+                                      in Casino.game_machines if
+                                      machine.money >= money * 3]
 
         if len(machines_with_enough_money) == 0:
-            print("There are no machines with enough money for game (for possible 3x won), decrease the sum")
+            print("There are no machines with enough money for game"
+                  " (for possible 3x won), decrease the sum")
         else:
-            money_won, generated_value = machines_with_enough_money[0].play(money)
+            money_won, generated_value = machines_with_enough_money[0]\
+                .play(money)
             print(
-                "generated value is {}  (for possible 3x won 3 common digits, for 2x won 2 common digits or you lose)".format(
+                "generated value is {}  (for possible 3x won 3 common digits,"
+                " for 2x won 2 common digits or you lose)".format(
                     generated_value))
             self.money = self.money + money_won
         return
@@ -47,8 +53,10 @@ class SuperAdmin(User):
         if self.casino is None:
             self.casino = Casino(name)
         else:
-            # recreate casino, add money from game machines to admin total money, clear previously existed game machines
-            self.money = self.money + sum(machine.money for machine in self.casino.game_machines)
+            # recreate casino, add money from game machines
+            # to admin total money, clear previously existed game machines
+            self.money = self.money + sum(machine.money for machine
+                                          in self.casino.game_machines)
             self.casino.game_machines.clear()
             self.casino = Casino(name)
             print("Recreate")
@@ -61,18 +69,20 @@ class SuperAdmin(User):
 
     def withdraw_money(self, number):
         # get money from machines
-        available_money_on_machines = sum(machine.money for machine in self.casino.game_machines)
+        available_money_on_machines = sum(machine.money for machine
+                                          in self.casino.game_machines)
         if available_money_on_machines < number:
             raise Exception(
-                "Not enough money there are only {} money on game machines".format(available_money_on_machines))
+                "Not enough money there are only {} money"
+                " on game machines".format(available_money_on_machines))
         self.money = self.money + number
-        for machine in sorted(self.casino.game_machines, key=lambda machine: machine.money, reverse=True):
+        for machine in sorted(self.casino.game_machines,
+                              key=lambda machine: machine.money, reverse=True):
             if machine.money > number:
                 machine.money = machine.money - number
                 break
             number = number - machine.money
             machine.money = 0
-
 
     def add_money(self, index, money):
         # add money to concrete game machine of casino
@@ -153,9 +163,11 @@ if __name__ == "__main__":
     while True:
         try:
             choice = int(
-                input("0. Exit 1. Create User 2. Create Super Admin 3. Create Casino 4. Create Game Machine 5. Play \n"
+                input("0. Exit 1. Create User 2. Create Super Admin "
+                      "3. Create Casino 4. Create Game Machine 5. Play \n"
                       " 6. Add money to account 7. Add money to Game Machine "
-                      "8. Withdraw money from Game Machine 9. Delete game machine 10. Info: "))
+                      "8. Withdraw money from Game Machine "
+                      "9. Delete game machine 10. Info: "))
             if choice == 0:
                 break
             elif choice == 1:
@@ -171,7 +183,8 @@ if __name__ == "__main__":
                     money = float(input("Enter Super Admin money: "))
                     super_admin = SuperAdmin(name, money)
                 else:
-                    choice = input("Do you want recreate admin type yes or no: ")
+                    choice = input("Do you want recreate "
+                                   "admin type yes or no: ")
                     if choice == "yes":
                         name = input("Enter Super Admin name: ")
                         money = float(input("Enter Super Admin money: "))
@@ -196,66 +209,88 @@ if __name__ == "__main__":
                     continue
             elif choice == 4:
                 if super_admin and super_admin.casino:
-                    money = float(input("Enter money count to initialize new machine: "))
+                    money = float(input("Enter money count to "
+                                        "initialize new machine: "))
                     super_admin.create_game_machine(money)
                 else:
                     print("Create Super Admin and/or Casino")
                     continue
             elif choice == 5:
                 for index, user in enumerate(users):
-                    print("index {} name {} money {}".format(index, user.name, user.money))
+                    print("index {} name {} money {}".
+                          format(index, user.name, user.money))
                 user_index = int(input("Select user index number to play: "))
                 money = float(input("Enter money count to play: "))
                 users[user_index].play(money)
-                print("The balance of user {} is {} ".format(users[user_index].name, users[user_index].money))
+                print("The balance of user {} is {} ".
+                      format(users[user_index].name, users[user_index].money))
             elif choice == 6:
-                add_money = input("Add money to Admin type a or to one of simple users type u: ")
+                add_money = input("Add money to Admin type a or "
+                                  "to one of simple users type u: ")
                 if add_money == "a" and super_admin:
                     value = float(input("How much money to add? : "))
                     super_admin.money = super_admin.money + value
-                    print("The balance of super admin {} is {} ".format(super_admin.name, super_admin.money))
+                    print("The balance of super admin {} is {} ".
+                          format(super_admin.name, super_admin.money))
                 elif add_money == "u":
                     for index, user in enumerate(users):
-                        print("index {} name {} money {}".format(index, user.name, user.money))
-                    user_index = int(input("Select user index number to add: "))
+                        print("index {} name {} money {}".
+                              format(index, user.name, user.money))
+                    user_index = int(input("Select user index "
+                                           "number to add: "))
                     value = float(input("How much money to add? :"))
                     users[user_index].money = users[user_index].money + value
-                    print("The balance of user {} is {} ".format(users[user_index].name, users[user_index].money))
+                    print("The balance of user {} is {} ".format(
+                        users[user_index].name, users[user_index].money))
             elif choice == 7 and super_admin:
-                for index, machine in enumerate(super_admin.casino.game_machines):
-                    print("Machine with {} index has {} money ".format(index, machine.money))
+                machines = enumerate(super_admin.casino.game_machines)
+                for index, machine in machines:
+                    print("Machine with {} index has {} money ".
+                          format(index, machine.money))
                 index = int(input("Type index of machine to add money: "))
                 how_much = float(input("Type how much to add: "))
                 super_admin.add_money(index, how_much)
             elif choice == 8 and super_admin:
-                for index, machine in enumerate(super_admin.casino.game_machines):
-                    print("Machine with {} index has {} money ".format(index, machine.money))
+                machines = enumerate(super_admin.casino.game_machines)
+                for index, machine in machines:
+                    print("Machine with {} index has {} money ".
+                          format(index, machine.money))
                 how_much = float(input("Type how much to withdraw: "))
                 super_admin.withdraw_money(how_much)
             elif choice == 9:
                 if super_admin and super_admin.casino:
                     machine_count = super_admin.casino.get_machine_count()
-                    print("There is ' {} ' casino and game machines available".format(super_admin.casino.name,
-                                                                                      machine_count))
-                    for index, machine in enumerate(super_admin.casino.game_machines):
-                        print("Machine with {} index has {} money ".format(index, machine.money))
+                    print("There is ' {} ' casino and game machines available".
+                          format(super_admin.casino.name, machine_count))
+                    machines = enumerate(super_admin.casino.game_machines)
+                    for index, machine in machines:
+                        print("Machine with {} index has {} money ".
+                              format(index, machine.money))
 
                     if machine_count > 1:
-                        index = int(input("Enter game machine index to delete: "))
+                        index = int(input("Enter game machine "
+                                          "index to delete: "))
                         super_admin.delete_game_machine(index)
                     elif machine_count == 0:
                         continue
                     else:
-                        print("There is just one machine, there no machines to divide between")
+                        print("There is just one machine, there"
+                              " no machines to divide between")
             elif choice == 10:
                 for index, user in enumerate(users):
-                    print("user {} {} has {} money".format(index, user.name, user.money))
+                    print("user {} {} has {} money".
+                          format(index, user.name, user.money))
                 if super_admin and super_admin.casino:
-                    print("super admin {} has {} money".format(super_admin.name, super_admin.money))
-                    print("There is ' {} ' casino and {} game machines available".format(super_admin.casino.name,
-                                                                                         super_admin.casino.get_machine_count()))
-                    for index, machine in enumerate(super_admin.casino.game_machines):
-                        print("Machine with {} index has {} money ".format(index, machine.money))
+                    print("super admin {} has {} money".
+                          format(super_admin.name, super_admin.money))
+                    print("There is ' {} ' casino and"
+                          " {} game machines available".
+                          format(super_admin.casino.name,
+                                 super_admin.casino.get_machine_count()))
+                    machines = enumerate(super_admin.casino.game_machines)
+                    for index, machine in machines:
+                        print("Machine with {} index has {} money "
+                              .format(index, machine.money))
             else:
                 continue
         except Exception as e:
